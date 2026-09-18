@@ -1,0 +1,149 @@
+project report 
+
+1) Roadmap 
+                    DATAPULSE
+                       │
+                       ▼
+              ┌─────────────────┐
+              │ Raw Excel Data  │
+              └────────┬────────┘
+                       │
+                       ▼
+              ┌─────────────────┐
+              │ Python + Pandas │
+              │ Ingestion       │
+              └────────┬────────┘
+                       │
+                       ▼
+              ┌─────────────────┐
+              │ Validation      │
+              │ ✓ Missing       │
+              │ ✓ Duplicates    │
+              │ ✓ Data types    │
+              │ ✓ Business rules│
+              └────────┬────────┘
+                       │
+                       ▼
+              ┌─────────────────┐
+              │ Cleaning &      │
+              │ Transformation  │
+              └────────┬────────┘
+                       │
+                       ▼
+              ┌─────────────────┐
+              │ Clean CSV       │
+              └────────┬────────┘
+                       │
+                       ▼
+              ┌─────────────────┐
+              │ SQL Server      │
+              │ DataPulseDB     │
+              └────────┬────────┘
+                       │
+                       ▼
+              ┌─────────────────┐
+              │ SQL Analysis    │
+              │ Revenue         │
+              │ Profit         │
+              │ Customers      │
+              │ Products       │
+              └────────┬────────┘
+                       │
+                       ▼
+              ┌─────────────────┐
+              │ Power BI        │
+              │ Dashboard       │
+              └─────────────────┘
+
+2) First Step 
+DATA PULSE
+│
+├── 1. PROJECT SETUP
+│   │
+│   ├── Created project folder
+│   │   D:\New Projects\Data Pulse
+│   │
+│   ├── Created folders
+│   │   ├── data/
+│   │   │   └── raw/
+│   │   └── scripts/
+│   │
+│   └── Added raw dataset
+│       └── Sample - Superstore.xls
+│
+├── 2. DATA INSPECTION
+│   │
+│   └── inspect_data.py
+│       │
+│       ├── Loaded Excel dataset using Pandas
+│       ├── Checked number of rows
+│       │   └── 9,994
+│       ├── Checked number of columns
+│       │   └── 21
+│       ├── Checked column names
+│       ├── Checked data types
+│       └── Viewed sample records
+│
+├── 3. DATA VALIDATION
+│   │
+│   └── validate_data.py
+│       │
+│       ├── Missing values
+│       │   └── Postal Code → 11 missing
+│       │
+│       ├── Duplicate rows
+│       │   └── 0
+│       │
+│       ├── Unique values
+│       │   ├── Orders → 5,009
+│       │   ├── Customers → 793
+│       │   └── Products → 1,862
+│       │
+│       ├── Quantity validation
+│       │   └── 1–14, no invalid values
+│       │
+│       ├── Sales validation
+│       │   └── No negative sales
+│       │
+│       ├── Discount validation
+│       │   └── 0–0.8, no invalid values
+│       │
+│       ├── Date validation
+│       │   └── No Order Date > Ship Date
+│       │
+│       ├── Category validation
+│       │   └── 3 categories
+│       │
+│       ├── Region validation
+│       │   └── 4 regions
+│       │
+│       └── Segment validation
+│           └── 3 segments
+│
+└── 4. MISSING DATA INVESTIGATION
+    │
+    └── Investigated the 11 missing Postal Codes
+        │
+        ├── All are Burlington, Vermont
+        ├── No reliable postal code in our dataset
+        └── Decision:
+            KEEP AS NULL
+            ↓
+            Don't invent data
+
+** what we actually learned **
+ 
+RAW DATA
+   ↓
+UNDERSTAND DATA
+   ↓
+PROFILE DATA
+   ↓
+VALIDATE DATA
+   ↓
+IDENTIFY DATA QUALITY ISSUES
+   ↓
+INVESTIGATE ISSUES
+   ↓
+DECIDE HOW TO HANDLE THEM
+

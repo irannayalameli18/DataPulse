@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# VS Code
+.vscode/
+
+# Power BI temporary/backup files
+*.pbit
+
+# Python/Jupyter temporary files
+.ipynb_checkpoints/
+
+# Local system files
+.DS_Store
+Thumbs.db
+
+# Visual Studio local files
+.vs/
+**/.vs/
