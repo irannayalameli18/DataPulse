@@ -6,7 +6,7 @@ The project takes raw sales data, validates and cleans it using Python, stores t
 
 ## Project Workflow
 
-```text
+```
 Raw Sales Data
       ↓
 Python + Pandas
@@ -24,6 +24,8 @@ Processed CSV
 Power BI
       ↓
 Interactive Dashboard
+
+
 Technologies Used
 Python
 Pandas
@@ -91,6 +93,7 @@ The processed dataset is stored in:
 data/processed/sales_cleaned.csv
 
 Project Structure
+
 DataPulse/
 │
 ├── data/
@@ -113,6 +116,7 @@ DataPulse/
 ├── project report.txt
 ├── .gitignore
 └── README.md
+
 How to Run
 1. Install Dependencies
 pip install pandas sqlalchemy pyodbc
